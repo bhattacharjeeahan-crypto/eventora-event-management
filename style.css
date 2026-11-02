@@ -532,3 +532,21 @@ body.dark-mode .theme-toggle {
 body.dark-mode .event-modal {
     background: #25253b;
 }
+
+/* EVENT COUNTDOWN TIMER */
+
+.event-countdown {
+    display: inline-block;
+    margin: 8px 0 12px;
+    padding: 9px 13px;
+    background: #efebff;
+    color: var(--primary);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+body.dark-mode .event-countdown {
+    background: #393052;
+    color: #c5b5ff;
+}

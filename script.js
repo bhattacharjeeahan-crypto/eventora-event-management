@@ -177,3 +177,45 @@ themeToggle.addEventListener("click", () => {
 
     updateThemeButton();
 });
+
+// EVENT COUNTDOWN TIMER
+
+function updateCountdowns() {
+    const countdowns = document.querySelectorAll(".event-countdown");
+
+    countdowns.forEach((timer) => {
+        const dateParts = timer.dataset.eventDate.split("-");
+
+        const eventDate = new Date(
+            Number(dateParts[0]),
+            Number(dateParts[1]) - 1,
+            Number(dateParts[2])
+        );
+
+        const now = new Date();
+        const difference = eventDate - now;
+
+        if (difference <= 0) {
+            timer.textContent = "Event has started!";
+            return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+            (difference / (1000 * 60 * 60)) % 24
+        );
+        const minutes = Math.floor(
+            (difference / (1000 * 60)) % 60
+        );
+        const seconds = Math.floor(
+            (difference / 1000) % 60
+        );
+
+        timer.textContent =
+            `${days}d ${hours}h ${minutes}m ${seconds}s remaining`;
+    });
+}
+
+updateCountdowns();
+
+setInterval(updateCountdowns, 1000);
