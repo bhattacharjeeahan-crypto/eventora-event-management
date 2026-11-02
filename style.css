@@ -298,3 +298,38 @@ header {
         grid-template-columns: 1fr;
     }
 }
+
+/* SEARCH AND CATEGORY FILTER */
+
+.event-controls {
+    display: flex;
+    gap: 15px;
+    max-width: 750px;
+    margin: 0 auto 40px;
+}
+
+.event-controls input,
+.event-controls select {
+    padding: 15px 18px;
+    border: 1px solid #e2def5;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    background: white;
+}
+
+.event-controls input {
+    flex: 1;
+}
+
+.event-controls input:focus,
+.event-controls select:focus {
+    border-color: var(--primary);
+}
+
+@media (max-width: 600px) {
+    .event-controls {
+        flex-direction: column;
+    }
+}
