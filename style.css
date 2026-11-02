@@ -550,3 +550,30 @@ body.dark-mode .event-countdown {
     background: #393052;
     color: #c5b5ff;
 }
+
+/* DARK MODE NAVIGATION FIX */
+
+body.dark-mode header {
+    background: #202035;
+}
+
+body.dark-mode header a,
+body.dark-mode header .logo,
+body.dark-mode header nav a {
+    color: #f5f3ff;
+}
+
+body.dark-mode header a:hover,
+body.dark-mode header nav a:hover {
+    color: #a995ff;
+}
+
+/* SMOOTH THEME TRANSITION */
+
+body,
+header,
+.event-card,
+.event-controls input,
+.event-controls select {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
