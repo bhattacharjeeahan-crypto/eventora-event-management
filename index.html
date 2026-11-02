@@ -144,6 +144,72 @@
     </div>
 </dialog>
 
+<!-- EVENT REGISTRATION DIALOG -->
+<dialog id="registrationModal" class="event-modal">
+    <div class="registration-content">
+        <button id="closeRegistration" class="close-modal">&times;</button>
+
+        <div class="registration-header">
+            <p class="hero-tag">SAVE YOUR SPOT</p>
+            <h2>Event Registration</h2>
+            <p>Complete the form below to reserve your place.</p>
+        </div>
+
+        <form id="registrationForm">
+
+            <label for="fullName">Full Name</label>
+            <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Enter your full name"
+                required
+                minlength="3"
+            >
+
+            <label for="email">Email Address</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="phone">Phone Number</label>
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter 10-digit phone number"
+                pattern="[0-9]{10}"
+                title="Enter a valid 10-digit phone number"
+                required
+            >
+
+            <label for="selectedEvent">Select Event</label>
+            <select id="selectedEvent" name="selectedEvent" required>
+                <option value="">Choose an event</option>
+                <option value="Tech Summit 2026">Tech Summit 2026</option>
+                <option value="Music Fest 2026">Music Fest 2026</option>
+                <option value="Startup Connect 2026">Startup Connect 2026</option>
+            </select>
+
+            <button type="submit" class="event-button">
+                Submit Registration
+            </button>
+        </form>
+
+        <div id="registrationSuccess" class="registration-success" hidden>
+            <h3>Registration Successful!</h3>
+            <p id="successMessage"></p>
+            <button id="finishRegistration" class="event-button">
+                Done
+            </button>
+        </div>
+    </div>
+</dialog>
+
     </main>
 
     <script src="script.js"></script>

@@ -77,3 +77,73 @@ eventModal.addEventListener("click", (event) => {
         eventModal.close();
     }
 });
+
+// EVENT REGISTRATION FUNCTIONALITY
+
+const registrationModal = document.getElementById("registrationModal");
+const registrationForm = document.getElementById("registrationForm");
+
+const selectedEvent = document.getElementById("selectedEvent");
+const registrationSuccess = document.getElementById("registrationSuccess");
+const successMessage = document.getElementById("successMessage");
+
+const registerButton = document.getElementById("registerButton");
+const closeRegistration = document.getElementById("closeRegistration");
+const finishRegistration = document.getElementById("finishRegistration");
+
+// Open registration form
+registerButton.addEventListener("click", () => {
+    selectedEvent.value = modalTitle.textContent;
+
+    registrationForm.hidden = false;
+    registrationSuccess.hidden = true;
+
+    eventModal.close();
+    registrationModal.showModal();
+});
+
+// Close registration form
+closeRegistration.addEventListener("click", () => {
+    registrationModal.close();
+});
+
+finishRegistration.addEventListener("click", () => {
+    registrationModal.close();
+});
+
+// Submit registration
+registrationForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!registrationForm.checkValidity()) {
+        registrationForm.reportValidity();
+        return;
+    }
+
+    const registration = {
+        name: document.getElementById("fullName").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        phone: document.getElementById("phone").value.trim(),
+        event: selectedEvent.value,
+        registrationDate: new Date().toISOString()
+    };
+
+    // Save registration in Local Storage
+    const registrations = JSON.parse(
+        localStorage.getItem("eventoraRegistrations") || "[]"
+    );
+
+    registrations.push(registration);
+
+    localStorage.setItem(
+        "eventoraRegistrations",
+        JSON.stringify(registrations)
+    );
+
+    // Display confirmation
+    successMessage.textContent =
+        `Thank you, ${registration.name}! Your registration for ${registration.event} has been saved.`;
+
+    registrationForm.hidden = true;
+    registrationSuccess.hidden = false;
+});

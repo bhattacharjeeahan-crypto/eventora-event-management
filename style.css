@@ -394,3 +394,82 @@ header {
 .event-modal .event-button {
     margin-top: 15px;
 }
+
+/* REGISTRATION FORM */
+
+.registration-content {
+    background: white;
+    padding: 35px;
+    position: relative;
+}
+
+.registration-header {
+    margin-bottom: 25px;
+}
+
+.registration-header h2 {
+    font-size: 28px;
+    margin: 10px 0;
+}
+
+.registration-header p:not(.hero-tag) {
+    color: var(--text);
+    line-height: 1.6;
+}
+
+#registrationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+#registrationForm label {
+    font-weight: 700;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+#registrationForm input,
+#registrationForm select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dedbea;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+}
+
+#registrationForm input:focus,
+#registrationForm select:focus {
+    border-color: var(--primary);
+}
+
+.registration-success {
+    text-align: center;
+    padding: 25px 0;
+}
+
+.registration-success h3 {
+    color: #26965b;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.registration-success p {
+    color: var(--text);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+    .registration-content {
+        padding: 25px 20px;
+    }
+}
+
+/* FIX: HIDE FORM AFTER SUCCESSFUL REGISTRATION */
+
+[hidden] {
+    display: none !important;
+}
