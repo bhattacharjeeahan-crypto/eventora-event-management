@@ -704,3 +704,10 @@ body.dark-mode .about-feature {
     scroll-margin-top: 100px;
     z-index: 1;
 }
+html {
+    scroll-behavior: smooth;
+}
+
+#about {
+    scroll-margin-top: 100px;
+}
