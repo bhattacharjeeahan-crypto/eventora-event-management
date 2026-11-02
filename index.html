@@ -8,33 +8,37 @@
     <title>Eventora | Discover. Connect. Celebrate.</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <!-- NAVIGATION BAR -->
     <header>
         <nav class="navbar">
-            <a href="#" class="logo">Eventora<span>.</span></a>
+            <a href="#home" class="logo">Eventora<span>.</span></a>
 
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#events">Explore Events</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#about" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' }); return false;">About</a></li>
             </ul>
 
             <a href="#events" class="nav-button">Explore Now</a>
-            
-<button id="themeToggle" class="theme-toggle" type="button">
-    🌙 Dark Mode
-</button>
 
+            <button id="themeToggle" class="theme-toggle" type="button">
+                🌙 Dark Mode
+            </button>
         </nav>
     </header>
 
     <main>
+
+        <!-- HERO SECTION -->
         <section class="hero" id="home">
             <div class="hero-content">
                 <p class="hero-tag">YOUR NEXT EXPERIENCE STARTS HERE</p>
 
-                <h1>Discover Events.<br>
+                <h1>
+                    Discover Events.<br>
                     <span>Create Memories.</span>
                 </h1>
 
@@ -49,184 +53,289 @@
             </div>
         </section>
 
+        <!-- UPCOMING EVENTS -->
+        <section id="events" class="events-section">
 
-<section id="events" class="events-section">
-    <div class="section-heading">
-        <p class="hero-tag">EXPLORE WHAT'S HAPPENING</p>
-        <h2>Upcoming Events</h2>
-        <p>Find your next unforgettable experience.</p>
-    </div>
-    
-<div class="event-controls">
-    <input
-        type="text"
-        id="searchInput"
-        placeholder="Search events..."
-    >
-
-    <select id="categoryFilter">
-        <option value="all">All Categories</option>
-        <option value="technology">Technology</option>
-        <option value="music">Music</option>
-        <option value="business">Business</option>
-    </select>
-</div>
-
-    <div class="event-grid">
-
-        <article class="event-card">
-            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800"
-                 alt="Technology conference">
-
-            <div class="event-info">
-                <span class="event-category">Technology</span>
-                <h3>Tech Summit 2026</h3>
-                <p>📅 November 15, 2026</p>
-                <div class="event-countdown" data-event-date="2026-11-15">
-    Calculating countdown...
-</div>
-
-                <p>📍 Kolkata, West Bengal</p>
-                <p class="event-description">
-                    Explore the future of technology and innovation
-                    with industry experts.
-                </p>
-                <button class="event-button">View Details</button>
+            <div class="section-heading">
+                <p class="hero-tag">EXPLORE WHAT'S HAPPENING</p>
+                <h2>Upcoming Events</h2>
+                <p>Find your next unforgettable experience.</p>
             </div>
-        </article>
 
-        <article class="event-card">
-            <img src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
-                 alt="Live music concert">
+            <!-- SEARCH AND FILTER -->
+            <div class="event-controls">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search events..."
+                >
 
-            <div class="event-info">
-                <span class="event-category">Music</span>
-                <h3>Music Fest 2026</h3>
-                <p>📅 November 22, 2026</p>
-                <div class="event-countdown" data-event-date="2026-11-22">
-    Calculating countdown...
-</div>
-                <p>📍 Kolkata, West Bengal</p>
-                <p class="event-description">
-                    Experience an unforgettable evening of live
-                    performances and music.
-                </p>
-                <button class="event-button">View Details</button>
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="technology">Technology</option>
+                    <option value="music">Music</option>
+                    <option value="business">Business</option>
+                </select>
             </div>
-        </article>
 
-        <article class="event-card">
-            <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800"
-                 alt="Business networking event">
+            <!-- EVENT CARDS -->
+            <div class="event-grid">
 
-            <div class="event-info">
-                <span class="event-category">Business</span>
-                <h3>Startup Connect 2026</h3>
-                <p>📅 December 5, 2026</p>
-                <div class="event-countdown" data-event-date="2026-12-05">
-    Calculating countdown...
-</div>
-                <p>📍 Kolkata, West Bengal</p>
-                <p class="event-description">
-                    Connect with entrepreneurs, investors and
-                    ambitious innovators.
-                </p>
-                <button class="event-button">View Details</button>
+                <article class="event-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800"
+                        alt="Technology conference"
+                    >
+
+                    <div class="event-info">
+                        <span class="event-category">Technology</span>
+                        <h3>Tech Summit 2026</h3>
+                        <p>📅 November 15, 2026</p>
+
+                        <div class="event-countdown"
+                             data-event-date="2026-11-15">
+                            Calculating countdown...
+                        </div>
+
+                        <p>📍 Kolkata, West Bengal</p>
+
+                        <p class="event-description">
+                            Explore the future of technology and innovation
+                            with industry experts.
+                        </p>
+
+                        <button class="event-button">View Details</button>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800"
+                        alt="Live music concert"
+                    >
+
+                    <div class="event-info">
+                        <span class="event-category">Music</span>
+                        <h3>Music Fest 2026</h3>
+                        <p>📅 November 22, 2026</p>
+
+                        <div class="event-countdown"
+                             data-event-date="2026-11-22">
+                            Calculating countdown...
+                        </div>
+
+                        <p>📍 Kolkata, West Bengal</p>
+
+                        <p class="event-description">
+                            Experience an unforgettable evening of live
+                            performances and music.
+                        </p>
+
+                        <button class="event-button">View Details</button>
+                    </div>
+                </article>
+
+                <article class="event-card">
+                    <img
+                        src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800"
+                        alt="Business networking event"
+                    >
+
+                    <div class="event-info">
+                        <span class="event-category">Business</span>
+                        <h3>Startup Connect 2026</h3>
+                        <p>📅 December 5, 2026</p>
+
+                        <div class="event-countdown"
+                             data-event-date="2026-12-05">
+                            Calculating countdown...
+                        </div>
+
+                        <p>📍 Kolkata, West Bengal</p>
+
+                        <p class="event-description">
+                            Connect with entrepreneurs, investors and
+                            ambitious innovators.
+                        </p>
+
+                        <button class="event-button">View Details</button>
+                    </div>
+                </article>
+
             </div>
-        </article>
+        </section>
 
-    </div>
-</section>
+        <!-- ABOUT SECTION -->
+        <section id="about" class="about-section">
 
-<!-- EVENT DETAILS DIALOG -->
-<dialog id="eventModal" class="event-modal">
-    <div class="modal-content">
-        <button id="closeModal" class="close-modal">&times;</button>
+            <div class="about-content">
+                <p class="hero-tag">GET TO KNOW US</p>
 
-        <img id="modalImage" src="" alt="Event image">
+                <h2>About Eventora</h2>
 
-        <div class="modal-info">
-            <span id="modalCategory" class="event-category"></span>
-            <h2 id="modalTitle"></h2>
-            <p id="modalDate"></p>
-            <p id="modalVenue"></p>
-            <p id="modalDescription"></p>
+                <p>
+                    Eventora is your destination for discovering exciting
+                    events, connecting with amazing people, and creating
+                    unforgettable memories.
+                </p>
 
-            <button id="registerButton" class="event-button">
-                Register Now
-            </button>
-        </div>
-    </div>
-</dialog>
+                <h3>Our Mission</h3>
 
-<!-- EVENT REGISTRATION DIALOG -->
-<dialog id="registrationModal" class="event-modal">
-    <div class="registration-content">
-        <button id="closeRegistration" class="close-modal">&times;</button>
+                <p>
+                    Our mission is to make event discovery and registration
+                    simple, accessible, and enjoyable for everyone.
+                </p>
 
-        <div class="registration-header">
-            <p class="hero-tag">SAVE YOUR SPOT</p>
-            <h2>Event Registration</h2>
-            <p>Complete the form below to reserve your place.</p>
-        </div>
+                <h3>What We Offer</h3>
 
-        <form id="registrationForm">
+                <div class="about-features">
+                    <div class="about-feature">
+                        <span>💻</span>
+                        <h4>Technology Events</h4>
+                        <p>Discover conferences, workshops and tech summits.</p>
+                    </div>
 
-            <label for="fullName">Full Name</label>
-            <input
-                type="text"
-                id="fullName"
-                name="fullName"
-                placeholder="Enter your full name"
-                required
-                minlength="3"
-            >
+                    <div class="about-feature">
+                        <span>🎵</span>
+                        <h4>Music Festivals</h4>
+                        <p>Experience live performances and entertainment.</p>
+                    </div>
 
-            <label for="email">Email Address</label>
-            <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Enter your email"
-                required
-            >
+                    <div class="about-feature">
+                        <span>🤝</span>
+                        <h4>Networking</h4>
+                        <p>Connect with entrepreneurs and new people.</p>
+                    </div>
+                </div>
+            </div>
 
-            <label for="phone">Phone Number</label>
-            <input
-                type="tel"
-                id="phone"
-                name="phone"
-                placeholder="Enter 10-digit phone number"
-                pattern="[0-9]{10}"
-                title="Enter a valid 10-digit phone number"
-                required
-            >
+        </section>
 
-            <label for="selectedEvent">Select Event</label>
-            <select id="selectedEvent" name="selectedEvent" required>
-                <option value="">Choose an event</option>
-                <option value="Tech Summit 2026">Tech Summit 2026</option>
-                <option value="Music Fest 2026">Music Fest 2026</option>
-                <option value="Startup Connect 2026">Startup Connect 2026</option>
-            </select>
+        <!-- EVENT DETAILS DIALOG -->
+        <dialog id="eventModal" class="event-modal">
+            <div class="modal-content">
 
-            <button type="submit" class="event-button">
-                Submit Registration
-            </button>
-        </form>
+                <button id="closeModal" class="close-modal">&times;</button>
 
-        <div id="registrationSuccess" class="registration-success" hidden>
-            <h3>Registration Successful!</h3>
-            <p id="successMessage"></p>
-            <button id="finishRegistration" class="event-button">
-                Done
-            </button>
-        </div>
-    </div>
-</dialog>
+                <img id="modalImage" src="" alt="Event image">
+
+                <div class="modal-info">
+                    <span id="modalCategory" class="event-category"></span>
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDate"></p>
+                    <p id="modalVenue"></p>
+                    <p id="modalDescription"></p>
+
+                    <button id="registerButton" class="event-button">
+                        Register Now
+                    </button>
+                </div>
+
+            </div>
+        </dialog>
+
+        <!-- REGISTRATION DIALOG -->
+        <dialog id="registrationModal" class="event-modal">
+
+            <div class="registration-content">
+
+                <button id="closeRegistration" class="close-modal">
+                    &times;
+                </button>
+
+                <div class="registration-header">
+                    <p class="hero-tag">SAVE YOUR SPOT</p>
+                    <h2>Event Registration</h2>
+                    <p>Complete the form below to reserve your place.</p>
+                </div>
+
+                <form id="registrationForm">
+
+                    <label for="fullName">Full Name</label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        required
+                        minlength="3"
+                    >
+
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter 10-digit phone number"
+                        pattern="[0-9]{10}"
+                        title="Enter a valid 10-digit phone number"
+                        required
+                    >
+
+                    <label for="selectedEvent">Select Event</label>
+
+                    <select id="selectedEvent" name="selectedEvent" required>
+                        <option value="">Choose an event</option>
+                        <option value="Tech Summit 2026">Tech Summit 2026</option>
+                        <option value="Music Fest 2026">Music Fest 2026</option>
+                        <option value="Startup Connect 2026">Startup Connect 2026</option>
+                    </select>
+
+                    <button type="submit" class="event-button">
+                        Submit Registration
+                    </button>
+
+                </form>
+
+                <div id="registrationSuccess"
+                     class="registration-success" hidden>
+
+                    <h3>Registration Successful!</h3>
+                    <p id="successMessage"></p>
+
+                    <button id="finishRegistration" class="event-button">
+                        Done
+                    </button>
+
+                </div>
+
+            </div>
+        </dialog>
 
     </main>
 
-    <script src="script.js"></script>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <h2>Eventora<span>.</span></h2>
+
+            <p>
+                Discover events. Connect with people.
+                Celebrate unforgettable moments.
+            </p>
+
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#events">Explore Events</a>
+                <a href="#about" onclick="document.getElementById('about').scrollIntoView({ behavior: 'smooth' }); return false;">About</a>
+            </div>
+
+            <p class="copyright">
+                © 2026 Eventora. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+
 </body>
 </html>

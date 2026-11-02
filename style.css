@@ -577,3 +577,130 @@ header,
 .event-controls select {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* ABOUT SECTION */
+
+.about-section {
+    padding: 90px 30px;
+    background: #f0edff;
+    text-align: center;
+}
+
+.about-content {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.about-section h2 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.about-section h3 {
+    font-size: 25px;
+    margin: 35px 0 12px;
+}
+
+.about-section p {
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 16px;
+    max-width: 750px;
+    margin: 0 auto 15px;
+}
+
+.about-features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.about-feature {
+    background: white;
+    padding: 28px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(30, 20, 80, 0.06);
+}
+
+.about-feature span {
+    font-size: 35px;
+}
+
+.about-feature h4 {
+    margin: 15px 0 10px;
+}
+
+body.dark-mode .about-section {
+    background: #202035;
+}
+
+body.dark-mode .about-feature {
+    background: #25253b;
+    color: #f5f3ff;
+}
+
+/* FOOTER */
+
+.site-footer {
+    background: #17152b;
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.site-footer h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.site-footer h2 span {
+    color: #a18bff;
+}
+
+.site-footer p {
+    color: #d0cde0;
+    line-height: 1.7;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #a18bff;
+}
+
+.copyright {
+    font-size: 13px;
+    margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .about-features {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section h2 {
+        font-size: 30px;
+    }
+}
+/* ABOUT SECTION VISIBILITY FIX */
+#about {
+    display: block !important;
+    visibility: visible !important;
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    scroll-margin-top: 100px;
+    z-index: 1;
+}
