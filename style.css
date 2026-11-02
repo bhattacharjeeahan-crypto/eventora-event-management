@@ -473,3 +473,62 @@ header {
 [hidden] {
     display: none !important;
 }
+
+/* DARK MODE TOGGLE BUTTON */
+
+.theme-toggle {
+    padding: 12px 18px;
+    margin-left: 12px;
+    border: 1px solid var(--primary);
+    border-radius: 10px;
+    background: transparent;
+    color: var(--primary);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* DARK THEME */
+
+body.dark-mode {
+    background: #151525;
+    color: #f5f3ff;
+}
+
+body.dark-mode header {
+    background: #202035;
+}
+
+body.dark-mode .events-section {
+    background: #151525;
+}
+
+body.dark-mode .event-card,
+body.dark-mode .modal-content,
+body.dark-mode .registration-content {
+    background: #25253b;
+    color: #f5f3ff;
+}
+
+body.dark-mode .event-info p,
+body.dark-mode .modal-info p,
+body.dark-mode .registration-header p {
+    color: #d0cde0;
+}
+
+body.dark-mode .event-controls input,
+body.dark-mode .event-controls select,
+body.dark-mode #registrationForm input,
+body.dark-mode #registrationForm select {
+    background: #30304a;
+    color: white;
+    border-color: #555570;
+}
+
+body.dark-mode .theme-toggle {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+body.dark-mode .event-modal {
+    background: #25253b;
+}

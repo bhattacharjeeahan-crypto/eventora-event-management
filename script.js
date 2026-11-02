@@ -147,3 +147,33 @@ registrationForm.addEventListener("submit", (event) => {
     registrationForm.hidden = true;
     registrationSuccess.hidden = false;
 });
+
+// DARK AND LIGHT MODE
+
+const themeToggle = document.getElementById("themeToggle");
+
+const savedTheme = localStorage.getItem("eventoraTheme");
+
+if (savedTheme === "dark") {
+    document.body.classList.add("dark-mode");
+}
+
+function updateThemeButton() {
+    themeToggle.textContent =
+        document.body.classList.contains("dark-mode")
+            ? "☀️ Light Mode"
+            : "🌙 Dark Mode";
+}
+
+updateThemeButton();
+
+themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+
+    const currentTheme =
+        document.body.classList.contains("dark-mode") ? "dark" : "light";
+
+    localStorage.setItem("eventoraTheme", currentTheme);
+
+    updateThemeButton();
+});
